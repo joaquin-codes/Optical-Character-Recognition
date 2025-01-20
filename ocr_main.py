@@ -140,7 +140,7 @@ def open_file_dialog():
         filetypes=[("Image files", "*.jpg *.png *.jpeg")])
     if file_path:
         image_label.config(
-            text=f"Imagen {os.path.basename(file_path)} cargada exitosamente")
+            text=f"Imagen {os.path.basename(file_path)} Upload Succesfull")
         return file_path
     else:
         return None
@@ -167,9 +167,9 @@ def update_ui(image_path):
         img_label.config(image=image_tk)
         img_label.image = image_tk  # Prevent garbage collection
 
-        result_label.config(text=f"Caracteres reconocidos: {', '.join(
+        result_label.config(text=f"Recognized characters: {', '.join(
             [f'{char} ({case})' for char, case in recognized_chars])}")
-        score_label.config(text=f"Mejor score: {best_score:.4f}")
+        score_label.config(text=f"Best score: {best_score:.4f}")
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
@@ -189,11 +189,11 @@ frame = ttk.Frame(root, padding=20)
 frame.pack(fill=tk.BOTH, expand=True)
 
 instruction_label = ttk.Label(
-    frame, text="Selecciona una imagen para reconocer los caracteres")
+    frame, text="Select an image")
 instruction_label.pack(pady=20)
 
 select_button = ttk.Button(
-    frame, text="Seleccionar Imagen", command=lambda: update_ui(open_file_dialog()))
+    frame, text="Select image", command=lambda: update_ui(open_file_dialog()))
 select_button.pack(pady=10)
 
 image_label = ttk.Label(frame, text="")
@@ -202,10 +202,10 @@ image_label.pack()
 img_label = ttk.Label(frame)
 img_label.pack(pady=20)
 
-result_label = ttk.Label(frame, text="Caracteres reconocidos: N/A")
+result_label = ttk.Label(frame, text="Characters recognized: N/A")
 result_label.pack(pady=10)
 
-score_label = ttk.Label(frame, text="Mejor score: N/A")
+score_label = ttk.Label(frame, text="Best match score: N/A")
 score_label.pack(pady=10)
 
 # Start the application
