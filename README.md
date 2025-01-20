@@ -1,5 +1,8 @@
 # Optical Character Recognition (OCR) Program
 
+![Screenshot of the Program](UI_picture.png)
+
+
 ## Introduction
 This project is a foundational Optical Character Recognition (OCR) system capable of identifying handwritten characters, including uppercase letters, lowercase letters, and numbers. The system is built from scratch, avoiding the use of pre-existing OCR libraries, and focuses on leveraging core image processing techniques and template matching.
 
